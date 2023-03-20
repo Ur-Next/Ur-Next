@@ -1,9 +1,9 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../firebase/AuthContextProvider";
 
-function ProtectedRoute() {
+function RedirectRoute() {
     const user = useAuth();
-    return user.uid ? <Outlet /> : <Navigate to="/login" />;
+    return user.uid ? <Navigate to="/" /> : <Outlet />;
 }
 
-export default ProtectedRoute;
+export default RedirectRoute;
