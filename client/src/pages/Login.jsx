@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { login } from "../firebase/AuthContextProvider";
+import { Link } from "react-router-dom";
 
 function Login() {
     const [formData, setFormData] = useState({ email: "", password: "" });
@@ -24,6 +25,7 @@ function Login() {
             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleFormDataChange} />
             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleFormDataChange} />
             <button>Login</button>
+            <Link to="/forgotPassword">Forgot Password?</Link>
         </form>
     );
 }

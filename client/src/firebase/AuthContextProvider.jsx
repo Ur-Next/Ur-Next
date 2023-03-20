@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "./config";
 import { onAuthStateChanged } from "firebase/auth";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 
 const AuthContext = createContext(null);
 
@@ -33,5 +33,9 @@ function logout() {
     return signOut(auth);
 }
 
+function resetPassword(email) {
+    return sendPasswordResetEmail(auth, email);
+}
+
 export default AuthContextProvider;
-export { useAuth, login, logout };
+export { useAuth, login, logout, resetPassword };
