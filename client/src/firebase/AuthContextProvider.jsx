@@ -22,15 +22,5 @@ function useAuth() {
     return useContext(AuthContext);
 }
 
-function useLogin() {
-    signInWithEmailAndPassword(auth, formData.email, formData.password)
-        .then(() => {
-            setFormData({ email: "", password: "" });
-        })
-        .catch(() => {
-            setIsInvalidEmailOrPassword(true);
-        });
-}
-
 export default AuthContextProvider;
 export { useAuth };
