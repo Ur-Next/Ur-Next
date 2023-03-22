@@ -5,7 +5,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
 
 function sendSMS(phoneNumber) {
-    client.messages.create({
+    return client.messages.create({
         body: "TESTING MESSAGE",
         from: "+14752628564",
         to: `+1${phoneNumber}`
