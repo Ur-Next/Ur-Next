@@ -1,0 +1,56 @@
+@import './css/homepage.css';
+@import './css/uipatient.css';
+
+
+
+:root
+{
+    --almostwhite: #f5fafa;
+    --mint: #1ad0db;
+    --lightlightblue: #c5e5fe;
+    --lightblue: #81bdfc;
+    --blue: #037ecc;
+    --purple: #6573f0;
+    --red: #f26a6a;
+    --green:#81e1b7;
+    --orange: #fdb900;
+    --lightlightgrey: #eceff1;
+    --lightgrey: #b0bec5;
+    --grey: #546e7a;
+    --graphite: #37474f;
+    --contrastgrey: #263238;
+
+    --tiny: 0.75rem; /*14px*/
+    --font-small: 0.875rem; /*14px*/
+    --font-med: 1.125rem; /*18px*/
+    --font-large: 1.5rem; /*24px*/
+    --font-largelarge: 1.75rem; /*28px*/
+}
+
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    background-color: #f0f8ff;
+};
+
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    margin: auto;
+    padding: 0;
+    line-height: 1;
+    font-family: 'Public Sans', sans-serif;
+    font-size: var(--font-small);
+    color: var(--graphite);
+    /* background-color: #1ad0db; */
+    background: linear-gradient(150deg, rgba(240,248,255,1) 0%, rgba(236,239,241,1) 52%, rgba(245,250,250,1) 100%);
+}
+

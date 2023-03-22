@@ -1,7 +1,7 @@
 import "../App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login";
-import Main from "./Main";
+import HomePage from "./HomePage";
 import ForgotPassword from "./ForgotPassword";
 import ProtectedRoute from "../components/ProtectedRoute";
 import RedirectRoute from "../components/RedirectRoute";
@@ -11,7 +11,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<ProtectedRoute />}>
-                    <Route index element={<Main />} />
+                    <Route index element={<HomePage />} />
                 </Route>
 
                 <Route path="/login" element={<RedirectRoute />}>
