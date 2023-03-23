@@ -34,16 +34,20 @@
 
 #timeAppointment {
     font-size: var(--font-largelarge);
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 #count {
     font-size: var(--font-large);
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 #readyMessage {
     font-size: var(--font-large);
     color: var(--blue);
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
