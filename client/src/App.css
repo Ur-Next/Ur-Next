@@ -1,5 +1,6 @@
 @import './css/homepage.css';
 @import './css/uipatient.css';
+@import './css/login.css';
 
 
 
@@ -32,12 +33,14 @@ html {
     font-size: 100%;
     box-sizing: border-box;
     background-color: #f0f8ff;
-};
+    background: linear-gradient(150deg, rgba(240,248,255,1) 0%, rgba(236,239,241,1) 52%, rgba(245,250,250,1) 100%);
+}
 
 
 *, *::before, *::after {
     box-sizing: inherit;
 }
+
 
 
 body {
@@ -51,6 +54,4 @@ body {
     font-size: var(--font-small);
     color: var(--graphite);
     /* background-color: #1ad0db; */
-    background: linear-gradient(150deg, rgba(240,248,255,1) 0%, rgba(236,239,241,1) 52%, rgba(245,250,250,1) 100%);
-}
-
+};

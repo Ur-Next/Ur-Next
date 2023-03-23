@@ -20,13 +20,15 @@ function Login() {
     }
 
     return (
-        <form onSubmit={handleFormSubmit}>
-            Login
-            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleFormDataChange} />
-            <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleFormDataChange} />
-            <button>Login</button>
-            <Link to="/forgotPassword">Forgot Password?</Link>
-        </form>
+        <div id="loginContainer">
+            <form onSubmit={handleFormSubmit}>
+                {/* <p id="loginLabel">Login</p> */}
+                <input class="loginInput" type="email" name="email" placeholder="Email" value={formData.email} onChange={handleFormDataChange} />
+                <input class="loginInput" type="password" name="password" placeholder="Password" value={formData.password} onChange={handleFormDataChange} />
+                <div id="loginBtn">Login</div>
+                <Link id="forgotPass" to="/forgotPassword">Forgot Password?</Link>
+            </form>
+        </div>
     );
 }
 

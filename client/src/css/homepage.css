@@ -46,6 +46,7 @@ input:focus {
 }
 
 ::placeholder { 
+    padding-left: 4px;;
     color: var(--lightgrey);
     opacity: 1;
     font-size: var(--tiny);
