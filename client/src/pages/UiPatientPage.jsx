@@ -1,13 +1,15 @@
 function UiPatient () {
     return (
+        <>
+        <img className="logoGrayedOut" src="./images/Logo_urnext_400.png" alt="Logo Urnext"></img>
         <div id="patientMainContainer">
-            <img id="logo" src="./images/Logo_urnext_400.png" alt="Logo Urnext"></img>
-            <p>Your estimate appointment time</p>
+            <p className="messageText">Your estimate appointment time</p>
             <div id="timeAppointment">10:25</div>
-            <p>Patients in the line ahead of you</p>
+            <p className="messageText">Patients in the line ahead of you</p>
             <div id="count">2</div>
-            <p>estimated time remaining {""} min</p>
+            <p className="messageText">Estimated time remaining {" __ "} min</p>
         </div>
+        </>
     )
 };
 

@@ -1,6 +1,7 @@
 @import './css/homepage.css';
 @import './css/uipatient.css';
 @import './css/login.css';
+@import './css/uipatient.css';
 
 
 
@@ -24,8 +25,8 @@
     --tiny: 0.75rem; /*14px*/
     --font-small: 0.875rem; /*14px*/
     --font-med: 1.125rem; /*18px*/
-    --font-large: 1.5rem; /*24px*/
-    --font-largelarge: 1.75rem; /*28px*/
+    --font-large: 2.25rem; /*24px*/
+    --font-largelarge: 3rem; /*28px*/
 }
 
 
