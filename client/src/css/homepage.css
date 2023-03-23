@@ -1,12 +1,45 @@
 /* HEADER */
+
+#headerContainer {
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* outline: 3px solid rgb(197, 32, 32); */
+}
+
 #logo {
-width: 200px;
-margin: 20px;
+    width: 200px;
+    /* outline: 3px solid rgb(197, 32, 32); */
+}
+
+
+
+
+/* LOGOUT */
+#logout {
+
+    color: var(--grey);
+    cursor: pointer;
+    /* outline: 3px solid rgb(197, 32, 32); */
+}
+
+#logout:hover {
+    
+    opacity: 0.50;
+    transition: opacity 200ms ease-in-out;
 }
 
 
 
 /* MAIN */
+#formContainer {
+    margin-bottom: 10px;
+}
+
 #mainContainer {
     width: 90%;
     height: 100vh;
@@ -17,10 +50,12 @@ margin: 20px;
     /* outline: 3px solid rgb(197, 32, 32); */
 }
 
-#lineBlock {
+
+#lineContainer {
+    
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     background-color: var(--almostwhite);
     border-radius: 7px;
@@ -29,27 +64,17 @@ margin: 20px;
     border-bottom: 1px solid white;
     box-shadow: -3px 0px 6px 2px rgba(0,0,0,0.05);
     margin-bottom: 2px;
+    /* outline: 3px solid rgb(32, 197, 153); */
+}
+
+
+#lineBlock {
+    width: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     /* outline: #6573f0 5px solid; */
-}
-
-input {
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    border: none;
-    background-color: var(--almostwhite);
-    /* outline: black 1px solid; */
-}
-
-input:focus {
-    outline: none;
-}
-
-::placeholder { 
-    padding-left: 4px;;
-    color: var(--lightgrey);
-    opacity: 1;
-    font-size: var(--tiny);
 }
 
 #numberInLine {
@@ -60,9 +85,38 @@ input:focus {
     /* outline: black 1px solid; */
 }
 
+.input {
+    margin: 0;
+    padding: 0px 10px;
+    width: 20%;
+    border: none;
+    background-color: var(--almostwhite);
+    /* outline: black 1px solid; */
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder { 
+    color: var(--lightgrey);
+    opacity: 1;
+    font-size: var(--tiny);
+}
+
+p {
+    margin:0;
+    line-height: 1;
+}
+
+
 #time {
-   width: 10%;
-   /* outline: black 1px solid; */
+    width: 180px;
+    padding-right: 40px;
+    color: var(--graphite);
+    border: none;
+    background-color: var(--almostwhite);
+    /* outline: black 1px solid; */
 }
 
 #symptoms {
@@ -70,12 +124,43 @@ input:focus {
     /* outline: black 1px solid; */
 }
 
-select:focus {
-    outline: none;
+button {
+    background: none;
+    border: none;
+    color: var(--blue);
 }
 
-.grayedOut {
-    color: red;
+
+button:disabled {
+    color:var(--lightgrey);
+}
+
+
+button:hover {
+
+    opacity: 0.50;
+    transition: opacity 200ms ease-in-out;
+};
+
+
+#buttonDel {
+    height: 30px;
+    display: flex;
+    align-items:center;
+    
+    padding:0px 10px;
+    border-radius: 5px;
+    background-color: var(--lightlightgrey);
+    color: var(--lightgrey);
+    font-size: var(--tiny);
+    outline: black 1px solid;
+}
+
+
+
+    /* DROP-DOWN MENU */
+/* select:focus {
+    outline: none;
 }
 
 #selectOptions {
@@ -86,45 +171,15 @@ select:focus {
     border: none;
     color: var(--blue);
     font-weight: bold;
-    /* outline: black 1px solid; */
 }
 
 #selectOptions > option {
     color: var(--contrastgrey);
-}
-
-
-#buttonDel {
-    height: 30px;
-    display: flex;
-    align-items:center;
-    /* margin: auto; */
-    padding:0px 10px;
-    border-radius: 5px;
-    background-color: var(--lightlightgrey);
-    color: var(--lightgrey);
-    font-size: var(--tiny);
-}
+} */
 
 
 
 
-
-
-
-
-
-
-a, a:visited, a:hover {
-    text-decoration: none;
-    padding: 0.5rem;
-    color: var(--darkgrey);
-    transition: color 200ms ease-in-out;
-}
-
-a:hover {
-    opacity: 0.50;
-}
 
 
 /* -----VALIDATION----- */
@@ -133,21 +188,4 @@ a:hover {
 {
 
 } */
-
-
-#homeContainer {
-
-    height: 70vh;
-    margin-top: 2%;
-    /* outline: 1px solid black; */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-
-
 

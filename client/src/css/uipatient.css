@@ -42,3 +42,8 @@
     margin-bottom: 30px;
 }
 
+#readyMessage {
+    font-size: var(--font-large);
+    color: var(--blue);
+}
+

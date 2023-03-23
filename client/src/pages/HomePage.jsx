@@ -1,6 +1,7 @@
-import LineBlock from "../components/LineBlock";
 import Header from "../components/Header";
-import { logout } from "../firebase/AuthContextProvider";
+import LineBlock from "../components/LineBlock";
+import FilledBlock from "../components/FilledBlock";
+
 
 
 function HomePage () {
@@ -8,8 +9,8 @@ function HomePage () {
         <div id="mainContainer">
             < Header />
             < LineBlock />
-            < LineBlock />
-            <button onClick={logout}>Logout</button>
+            < FilledBlock />
+            < FilledBlock />
         </div>
     )
 };

@@ -4,7 +4,7 @@ function Main() {
     return (
         <>
             <div>Main</div>
-            <button onClick={logout}>Logout</button>
+            <div id="logout" onClick={logout}>Logout</div>
         </>
     );
 }
