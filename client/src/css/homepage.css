@@ -36,6 +36,19 @@
 
 
 /* MAIN */
+#buttonDel {
+    height: 30px;
+    display: flex;
+    align-items:center;
+    
+    padding:0px 10px;
+    border-radius: 5px;
+    background-color: var(--lightlightgrey);
+    color: var(--lightgrey);
+    font-size: var(--tiny);
+    /* outline: black 1px solid; */
+}
+
 #formContainer {
     margin-bottom: 10px;
 }
@@ -143,18 +156,7 @@ button:hover {
 };
 
 
-#buttonDel {
-    height: 30px;
-    display: flex;
-    align-items:center;
-    
-    padding:0px 10px;
-    border-radius: 5px;
-    background-color: var(--lightlightgrey);
-    color: var(--lightgrey);
-    font-size: var(--tiny);
-    outline: black 1px solid;
-}
+
 
 
 

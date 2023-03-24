@@ -3,11 +3,13 @@ function LineBlock () {
         <div id="formContainer">
             <div id="lineContainer">
                 <div id="lineBlock">
-                    <div id="numberInLine" hidden >""</div>
+                    {/* <input id="numberInLine" hidden></input> */}
                     <input type="text" className="input" placeholder="First name" required></input>
                     <input type="text" className="input" placeholder="Last name"></input>
-                    <input type='time' id="time" placeholder="Time of appointment" required></input>
+                    <input type='date' id="date" required></input>
+                    <input type='time' id="time" required></input>
                     <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="input" placeholder="Tel." required></input>
+                    <input type="email" className="input" placeholder="Email" required></input>
                     <input type="text" className="input" placeholder="Symptoms"></input>
 
                     {/* <form action="#______________">
@@ -20,7 +22,6 @@ function LineBlock () {
 
                     <button className="submit">Submit</button>  
                 </div>
-                <div id="buttonDel">X</div>
             </div>
         </div>
     )
