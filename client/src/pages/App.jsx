@@ -6,6 +6,9 @@ import ForgotPassword from "./ForgotPassword";
 import ProtectedRoute from "../components/ProtectedRoute";
 import RedirectRoute from "../components/RedirectRoute";
 import UiPatientPage from "./UiPatientPage";
+import MainPage from "./MainPage";
+
+
 
 function App() {
     return (
@@ -25,6 +28,10 @@ function App() {
                 
                 <Route path="/patient" element={<RedirectRoute />}>
                     <Route index element={<UiPatientPage />} />
+                </Route>     
+
+                <Route path="/main" element={<RedirectRoute />}>
+                    <Route index element={<MainPage />} />
                 </Route>               
             </Routes>
         </BrowserRouter>
