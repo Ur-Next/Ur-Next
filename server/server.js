@@ -1,13 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const { createUser, getUsers, updateUser, deleteUser } = require('./db')
 
 const app = express();
 app.set('port', process.env.PORT || 3002)
 
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
+// app.use(cors())
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {

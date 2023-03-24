@@ -117,6 +117,19 @@ input:focus {
     font-size: var(--tiny);
 }
 
+    /* DATE */
+input[type="date"]{ 
+    width: 250px;
+    padding-right: 40px;
+
+    /* color: var(--graphite); */
+    border: none;
+    outline: none;
+    background-color: var(--almostwhite);
+}
+
+
+
 p {
     margin:0;
     line-height: 1;
@@ -124,7 +137,7 @@ p {
 
 
 #time {
-    width: 180px;
+    width: 250px;
     padding-right: 40px;
     color: var(--graphite);
     border: none;

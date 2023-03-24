@@ -14,21 +14,21 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                {/* <Route path="/" element={<ProtectedRoute />}> */}
+                <Route path="/" element={<ProtectedRoute />}>
                     <Route index element={<HomePage />} />
-                {/* </Route> */}
+                </Route>
 
-                {/* <Route path="/login" element={<RedirectRoute />}> */}
+                <Route path="/login" element={<RedirectRoute />}>
                     <Route index element={<Login />} />
-                {/* </Route> */}
+                </Route>
 
                 <Route path="/forgotPassword" element={<RedirectRoute />}>
                     <Route index element={<ForgotPassword />} />
                 </Route>
                 
-                <Route path="/patient" element={<RedirectRoute />}>
-                    <Route index element={<UiPatientPage />} />
-                </Route>     
+              
+                    <Route path="/patient" element={<UiPatientPage />} />
+             
 
                 <Route path="/main" element={<RedirectRoute />}>
                     <Route index element={<MainPage />} />

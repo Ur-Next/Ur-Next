@@ -14,6 +14,8 @@ function Login() {
     function handleFormSubmit(e) {
         e.preventDefault();
 
+    
+
         login(formData.email, formData.password).then(() => {
             setFormData({ email: "", password: "" });
         });
@@ -25,7 +27,7 @@ function Login() {
                 {/* <p id="loginLabel">Login</p> */}
                 <input className="loginInput" type="email" name="email" placeholder="Email" value={formData.email} onChange={handleFormDataChange} />
                 <input className="loginInput" type="password" name="password" placeholder="Password" value={formData.password} onChange={handleFormDataChange} />
-                <div className="loginBtn">Login</div>
+                <button className="loginBtn">Login</button>
                 <Link id="linkLocal" to="/forgotPassword">Forgot Password?</Link>
             </form>
         </div>
