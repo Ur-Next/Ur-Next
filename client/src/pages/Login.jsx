@@ -14,8 +14,6 @@ function Login() {
     function handleFormSubmit(e) {
         e.preventDefault();
 
-    
-
         login(formData.email, formData.password).then(() => {
             setFormData({ email: "", password: "" });
         });
@@ -23,12 +21,12 @@ function Login() {
 
     return (
         <div id="loginContainer">
+            <img src="./images/Logo_circles_90.png" alt="UrNext logo element"/>
             <form onSubmit={handleFormSubmit}>
-                {/* <p id="loginLabel">Login</p> */}
                 <input className="loginInput" type="email" name="email" placeholder="Email" value={formData.email} onChange={handleFormDataChange} />
                 <input className="loginInput" type="password" name="password" placeholder="Password" value={formData.password} onChange={handleFormDataChange} />
                 <button className="loginBtn">Login</button>
-                <Link id="linkLocal" to="/forgotPassword">Forgot Password?</Link>
+                <Link className="forgotPass" to="/forgotPassword">Forgot Password?</Link>
             </form>
         </div>
     );

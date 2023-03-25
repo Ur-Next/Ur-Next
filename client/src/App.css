@@ -23,9 +23,9 @@
     --graphite: #37474f;
     --contrastgrey: #263238;
 
-    --tiny: 0.75rem; /*14px*/
+    --tiny: 0.8125rem; /*12px*/
     --font-small: 0.875rem; /*14px*/
-    --font-med: 1.125rem; /*18px*/
+    --font-med: 1rem; /*16px*/
     --font-large: 2.25rem; /*24px*/
     --font-largelarge: 3rem; /*28px*/
 }
@@ -51,8 +51,8 @@ body {
     margin: auto;
     padding: 0;
     line-height: 1;
-    font-family: 'Public Sans', sans-serif;
-    font-size: var(--font-small);
+    font-family: 'Barlow', sans-serif;
+    font-size: var(--font-med);
     color: var(--graphite);
     /* background-color: #1ad0db; */
 };

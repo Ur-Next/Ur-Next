@@ -20,10 +20,10 @@ function ForgotPassword() {
     return (
         <div id="loginContainer">
             <form onSubmit={handleFormSubmit}>
-                <p id="enterEmail">Enter your email</p>
+                <p id="enterEmailMessage">Enter your email</p>
                 <input className="loginInput" type="email" name="email" placeholder="Email" value={formData.email} onChange={handleFormDataChange} />
                 <div className="loginBtn">Reset Password</div>
-                <Link id="linkLocal" to="/login">Return to Login</Link>
+                <Link className="forgotPass" to="/login">Return to Login</Link>
             </form>
         </div>
     );

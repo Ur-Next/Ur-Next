@@ -26,13 +26,10 @@ function App() {
                     <Route index element={<ForgotPassword />} />
                 </Route>
                 
-              
-                    <Route path="/patient" element={<UiPatientPage />} />
-             
+                <Route path="/patient" element={<UiPatientPage />} />
 
-                <Route path="/main" element={<RedirectRoute />}>
-                    <Route index element={<MainPage />} />
-                </Route>               
+                <Route path="/main" element={<MainPage />} />
+             
             </Routes>
         </BrowserRouter>
     );

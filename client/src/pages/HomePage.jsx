@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Form from "../components/Form";
-import FilledBlock from "../components/FilledBlock";
+import Users from "../components/Users";
 import { useEffect,useState } from "react";
 
 
@@ -8,17 +8,16 @@ function HomePage () {
     const [usersData,setUsersData]=useState([])
 
     useEffect(()=>{
-        console.log('re')
         fetch('/users').then(res=>res.json()).then(data=>{
             console.log(data)
             setUsersData(data)})
     },[])
 
     return (
-        <div id="mainContainer">
+        <div id="canvas">
             < Header />
             < Form />
-            {usersData.map((user,index)=>< FilledBlock key={user._id} user={user}  index={index}  />)}
+            {usersData.map((user,index)=>< Users key={user._id} user={user}  index={index}  />)}
             
           
         </div>
