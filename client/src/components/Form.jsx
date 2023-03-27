@@ -20,7 +20,6 @@ function Form () {
     };
 
     return (
-        <div id="formWrapper">
             <div id="form">
                 <input type="text" className="textTypeData" placeholder="First name" name='firstName' required value={formData.firstName} onChange={handleFormDataChange}></input>
                 <input type="text" className="textTypeData" placeholder="Last name"name='lastName' value={formData.lastName} onChange={handleFormDataChange}></input>
@@ -31,7 +30,6 @@ function Form () {
                 <input type="text" className="textTypeData" placeholder="Symptoms"></input>
                 <button id="buttonSubmit" onClick={handleFormSubmit}>Submit</button>  
             </div>
-        </div>
     )
 };
 

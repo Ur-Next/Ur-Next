@@ -25,22 +25,22 @@ async function updateUser(id, userInfo) {
             lastName: userInfo.lastName,
             phone: userInfo.phone,
             email: userInfo.email,
-            // symptom:  userInfo.symptom,
-            // appointmentDate: userInfo.appointmentDate,
-            // appointmentTime: userInfo.appointmentDate,
-            notified: userInfo.notified
+            notified: userInfo.notified,
+            symptom:  userInfo.symptom,
+            appointmentDate: userInfo.appointmentDate,
+            appointmentTime: userInfo.appointmentTime,
+            done: userInfo.done,
         }
     }
 
     db.collection('users').updateOne({ _id: new ObjectId(id) }, newValues, function (err, res) {
         if (err) throw err;
         console.log("1 document updated");
-        // response.json(res);
     });
 }
 
 async function deleteUser(id) {
-    db.collection('users').deleteOne({ _id: new ObjectId(id) }, (err, result) => {
+    db.collection('users').deleteOne({ _id: new ObjectId(id) }, (err, res) => {
         if (err) return console.log(err)
     })
 }
