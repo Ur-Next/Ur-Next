@@ -1,7 +1,148 @@
 #mainlogo {
 
+    width: 700px;
+    height: 700px;
+
+    position: relative;
+
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* outline: 1px solid black; */
+}
+
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    animation-delay: 0.5s;
+    /* animation: opacity rotation transformY linear; */
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    transition-timing-function: ease-in-out;
+}
+
+.bgColors {
+    background-image: url("../images/bg_colors_1200.png");
     background-repeat: no-repeat;
     background-size: cover; 
+    z-index: 1;
 
-    outline: 1px solid black;
+    animation-name: bgColors; 
 }
+
+.bgCircles {
+
+    background-image: url("../images/bg_logo_circles_1200.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    z-index: 2;
+    
+    animation-name: bgCircles;
+}
+
+.bgUrnext {
+
+    background-image: url("../images/bg_text_Urnext.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    z-index: 3;
+
+    animation-name: bgUrnext;
+}
+
+.bgText {
+    position: absolute;
+
+    background-image: url("../images/bg_text_small.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    z-index: 4;
+
+    animation-name: bgText;
+    animation-delay: 0.75s;
+}
+
+.loginLink {
+    position: absolute;
+    /* transform: translateY(165px); */
+
+    font-size: var(--font-big);
+    color: var(--grey);
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 5;
+
+    animation-name: loginLink;
+    animation-delay: 3s;
+}
+
+.loginLink:hover {
+    
+    opacity: 0.50;
+    transition: opacity 200ms ease-in-out;
+}
+
+
+@keyframes bgColors {
+    0% {
+      opacity: 0;
+      transform: scale(0.975);
+    }
+    35% {
+        opacity: 0.4;
+    }
+    100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+  }
+
+@keyframes bgCircles {
+    from {
+        opacity: 0;
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-100px) rotate(90deg) scale(0.3);
+    }
+  }
+
+  @keyframes bgUrnext {
+    from {
+        opacity: 0;
+        transform: translateY(0px) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-20px) scale(0.7);
+    }
+  }
+
+  @keyframes bgText {
+    from {
+        opacity: 0;
+        transform: translateY(0px) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-20px) scale(0.7);
+    }
+  }
+  
+  @keyframes loginLink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
