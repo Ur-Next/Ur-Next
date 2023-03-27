@@ -1,11 +1,20 @@
+#mainPageContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #mainlogo {
 
     width: 700px;
     height: 700px;
 
+
     position: relative;
 
-    margin-top: 100px;
+    /* margin-top: 100px; */
     margin-left: auto;
     margin-right: auto;
 
@@ -23,7 +32,7 @@
     height: 100%;
 
     animation-delay: 0.5s;
-    /* animation: opacity rotation transformY linear; */
+    animation: opacity rotation transformY linear;
     animation-duration: 2.5s;
     animation-fill-mode: both;
     transition-timing-function: ease-in-out;
@@ -71,9 +80,8 @@
 }
 
 .loginLink {
-    position: absolute;
-    /* transform: translateY(165px); */
-
+    /* position: absolute; */
+    transform: translateY(-190px);
     font-size: var(--font-big);
     color: var(--grey);
     cursor: pointer;
@@ -81,7 +89,11 @@
     z-index: 5;
 
     animation-name: loginLink;
-    animation-delay: 3s;
+    animation-delay: 2.0s;
+    animation: opacity rotation transformY linear;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    transition-timing-function: ease-in-out;
 }
 
 .loginLink:hover {

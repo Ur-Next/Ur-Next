@@ -18,8 +18,6 @@ function HomePage () {
             < Header />
             < Form />
             {usersData.map((user,index)=>< Users key={user._id} user={user}  index={index}  />)}
-            
-          
         </div>
     )
 };

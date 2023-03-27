@@ -43,10 +43,14 @@ p {
 
 #buttonDel {
     height: 25px;
+    width: 25px;
+
     display: flex;
     align-items:center;
-    
-    padding:0px 9px;
+    justify-content: center;
+    justify-self: end;
+
+    margin-right: 10px;
     border-radius: 5px;
     background-color: var(--lightlightgrey);
     color: var(--lightgrey);
@@ -55,17 +59,23 @@ p {
 }
 
 #buttonDone {
-    padding: 5px 10px;
+    padding: 5px 0px;
+    width: 70px;
     border: var(--lightlightblue) 1px solid;
     border-radius: 7px;
 }
 
 #buttonSubmit {
+    display: flex;
+    align-items: center;
+    justify-self: start;
     margin-left: 30px;
 }
 
 #canvas {
-    width: 80%;
+    /* width: 80%; */
+    padding: 50px;
+    width: 80vw;
     height: 100vh;
     margin: auto;
 
@@ -77,7 +87,7 @@ p {
 
 #wrapper {
 
-    height: 45px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -94,13 +104,13 @@ p {
 
 
 #form {
-    width: 95%;
     height: 40px;
     margin-left: 45px;
     margin-bottom: 20px;
 
     display: grid;
-    grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr) 200px 200px 300px 1fr 1fr 50px;
+    /* grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr) 200px 200px 300px 1fr 1fr 50px; */
+    grid-template-columns: repeat(8,1fr);
 
     /* outline: 3px solid rgb(162, 96, 173); */
 }
@@ -124,12 +134,16 @@ input:focus {
 }
 
 #dataGroup {
-    width: 90%;
+    width: 100vw;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 40px minmax(400px, 1fr) minmax(400px, 1fr) 100px 300px 2fr 50px;
+    /* grid-template-columns: 40px minmax(400px, 1fr) minmax(400px, 1fr) 100px 300px 2fr 50px; */
+    grid-template-columns:  40px repeat(8,2fr);
+    align-items: center;
+
     /* outline: 3px solid rgb(56, 18, 211); */
   }
+
 
 #numberInLine {
     display: flex;
@@ -145,6 +159,7 @@ input:focus {
     margin-bottom: 0;
     border: none;
     background-color: var(--almostwhite);
+
     /* outline: black 1px solid; */
 }
 
