@@ -28,14 +28,12 @@ app.post('/user/:id', (req, res) => {
     console.log(req.params.id, req.body)
     updateUser(req.params.id, req.body).then(x => {
         console.log(req.body)
-        // res.send(`User updated ${JSON.stringify(req.body)}`);
         res.end()
     })
 })
 
 app.delete('/user/:id', (req, res) => {
     deleteUser(req.params.id).then(x => {
-        // res.send({status:"Success",data:data});
         res.end()
     })
 })
@@ -44,7 +42,6 @@ app.delete('/user/:id', (req, res) => {
 app.get('/users', (req, res) => {
     getUsers().then(x => {
         res.send(x)        
-        // res.send(`result from server ${JSON.stringify(req.body)}`);
         res.end()
     })
 });
