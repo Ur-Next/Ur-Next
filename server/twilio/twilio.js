@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config(); // { path: "../.env" }
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -12,16 +12,19 @@ function sendNotificationSMS(phoneNumber) {
     });
 }
 
-function sendRegistrationSMS(phoneNumber, patientName, appointmentDate, appointmentTime) {
+function sendRegistrationSMS(phoneNumber, appointmentDate, appointmentTime) {
     return client.messages.create({
+        // body: `
+        // Hi,
+        // Your appointment on ${appointmentDate} at ${appointmentTime} is confirmed.
+        // `,
         body: `
-        Hi ${patientName},
-        Your appointment on ${appointmentDate} at ${appointmentTime} is confirmed.
+       Regitration Message Testing YAYYY!!
         `,
         from: "+14752628564",
         to: `+1${phoneNumber}`
     });
 }
-sendRegistrationSMS("7783213740", "KK", "13-2-2022", "13:00");
+// sendRegistrationSMS("7783213740", "KK", "13-2-2022", "13:00");
 
 module.exports = { sendNotificationSMS, sendRegistrationSMS };
