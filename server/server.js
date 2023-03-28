@@ -4,10 +4,19 @@ const bodyParser = require("body-parser");
 const { createUser, getUsers, updateUser, deleteUser } = require("./db");
 const { sendRegistrationSMS } = require("./twilio/twilio");
 
+
 const app = express();
 app.set("port", process.env.PORT || 3002);
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+//CORS ADDED TO TEST DELETE (SVETLANA)
+const cors = require('cors');
+app.use(cors({origin:'*'}));
+//END OF CODE ADDED
+
+
 // app.use(cors())
 app.use(bodyParser.json());
 

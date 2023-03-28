@@ -1,33 +1,27 @@
 import { useState } from 'react';
+// const ObjectId = require("mongodb").ObjectId;
 
 
         // DELETE PATIENTS - CLIENT SIDE
-
-// function addDelEventListeners()
-// {
-//     const deleteBtns = document.querySelectorAll('.buttonDel');
-    
-//     for (let button of deleteBtns)
-//         {   
-//             console.log(e.target);
-//             // button.addEventListener('click',(e)=>deletePatient(e.target));
-//         }
-    
-
-
-      
-// };
 
 function Users ({user,index}) {
 
     const [editBtn, setEditButton] = useState('Edit');
 
+    function DeletePatient () {
 
-    // function deletePatient(e)
-    //     {
-    //         // fetch('http://localhost:5555/artist/'+ e.value,{method:'delete'});
-    //         console.log(e.target);
-    //     } 
+        console.log(user._id);
+
+        fetch(`http://localhost:3002//user/:id/`+ { _id: `${user._id}` }, {
+            method: 'DELETE'})
+            .then(response => response.json())
+            .then(data => {
+            console.log('Patient deleted successfully', data);
+            })
+            .catch(error => {
+            console.error('Error deleting Patient', error);
+            });
+    }
 
     return (
        
@@ -41,7 +35,7 @@ function Users ({user,index}) {
                 <p type="text" className="textTypeData">{user.symptoms}</p>
                 <button id="submit"  disabled>{editBtn}</button>  
                 <button id="buttonDone" >Done</button>  
-                {/* <button id="buttonDel" onClick={deletePatient}>X</button> */}
+                <button id="buttonDel" onClick={DeletePatient}>X</button>
             </div>
 
             </div>
