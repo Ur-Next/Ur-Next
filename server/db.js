@@ -17,22 +17,9 @@ async function createUser(userInfo) {
 }
 
 async function updateUser(id, userInfo) {
-    let newValues = {
-        $set: {
-            firstName: userInfo.firstName,
-            lastName: userInfo.lastName,
-            phone: userInfo.phone,
-            email: userInfo.email,
-            notified: userInfo.notified,
-            symptom: userInfo.symptom,
-            appointmentDate: userInfo.appointmentDate,
-            appointmentTime: userInfo.appointmentTime,
-            done: userInfo.done
-        }
-    };
-
-    db.collection("users").updateOne({ _id: new ObjectId(id) }, newValues, function (err, res) {
+    db.collection("users").updateOne({ _id: new ObjectId(id) }, {$set:userInfo}, function (err, res) {
         if (err) throw err;
+        console.log(res)
         console.log("1 document updated");
     });
 }

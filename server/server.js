@@ -30,7 +30,7 @@ app.post("/user", (req, res) => {
         console.log(req.body);
         sendRegistrationSMS(req.body.phone);
         res.send(`User created ${JSON.stringify(req.body)}`);
-        res.end();
+    
     });
 });
 
@@ -38,21 +38,24 @@ app.post("/user", (req, res) => {
 app.post("/user/:id", (req, res) => {
     console.log(req.params.id, req.body);
     updateUser(req.params.id, req.body).then((x) => {
+
         console.log(req.body);
-        res.end();
+        res.send('Updated')
+       
     });
 });
 
 app.delete("/user/:id", (req, res) => {
     deleteUser(req.params.id).then((x) => {
-        res.end();
+        res.json('User deleted!')
+    
     });
 });
 
 app.get("/users", (req, res) => {
     getUsers().then((x) => {
         res.send(x);
-        res.end();
+       
     });
 });
 

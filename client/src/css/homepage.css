@@ -138,7 +138,7 @@ input:focus {
     display: grid;
     grid-gap: 10px;
     /* grid-template-columns: 40px minmax(400px, 1fr) minmax(400px, 1fr) 100px 300px 2fr 50px; */
-    grid-template-columns:  40px repeat(8,2fr);
+    grid-template-columns:  40px repeat(10,2fr);
     align-items: center;
 
     /* outline: 3px solid rgb(56, 18, 211); */
