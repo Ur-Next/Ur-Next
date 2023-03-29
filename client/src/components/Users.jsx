@@ -1,14 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import RefreshData from './RefreshData.jsx';
 // import { sendNotificationSMS, sendRegistrationSMS } from '../../../server/twilio/twilio'; //OUTSIDE THE PROJECT (moved in, tons of errors - environment not set up)
-// const ObjectId = require("mongodb").ObjectId;
 
 
 
 function Users ({user,index}) {
     
-    const [editBtn, setEditButton] = useState('Edit');
-    const [userNotified, setNotified] = useState('false');
+
+        //AUTOMATIC NOTIFICATIONS TO 5 FIRST USERS
+    if (index+1 <= 6 && user.notified === false) {
+        // user.appointmentDate === true && 
+
+        // sendNotificationSMS(user.phone);
+
+        //fetch and update to user.notified =true
+    }
+
     
+
     // DELETE PATIENTS
     function DeletePatient () {
 
@@ -23,31 +32,25 @@ function Users ({user,index}) {
             .catch(error => {
             console.error('Error deleting Patient', error);
             });
+
+        RefreshData();
     };
 
-    //DONE BUTTON (delete patient, changes status of one of 3 users, who needs to be notified, POSTs 'done patient' to the db with completed tasks)
 
-        //delete patient from the queue
+        //DONE BUTTON
+    function PetientDone () {
 
-        //send notifications to NEXT patients
-    function petientDone () {
+      //POST, not 'user.done to true', because the patient will be deleted right after the update. separate endpoint is needed?
+        // fetch
 
-        console.log(`index: ${index+1} is done`);
+        //delete patient 
 
-        if ((index+2) <= 3 && userNotified == 'false')
-            {
-            // sendNotificationSMS(nextPatient phone);
+        //redraw the ui
+        RefreshData();
+    };
 
-                fetch(`http://localhost:3002//user/`), {
-
-                    //update user, including 'notified' to true
-                }
-                setNotified = 'true';
-            }
-    }
-
-        
-
+  
+  
     return (
        
            <div id="wrapper">
@@ -58,8 +61,8 @@ function Users ({user,index}) {
                 <p type="time" id="time" >{user.appointmentTime}</p>
                 <p type="tel" className="textTypeData" >{user.phone}</p>
                 <p type="text" className="textTypeData">{user.symptoms}</p>
-                <button id="submit"  disabled>{editBtn}</button>  
-                <button id="buttonDone" onClick={petientDone}>Done</button>  
+                <button id="submit">Submit</button>  
+                <button id="buttonDone" onClick={PetientDone}>Done</button>  
                 <button id="buttonDel" onClick={DeletePatient}>X</button>
             </div>
 
