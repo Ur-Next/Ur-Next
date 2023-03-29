@@ -3,7 +3,7 @@ import { useAuth } from "../firebase/AuthContextProvider";
 
 function RedirectRoute() {
     const user = useAuth();
-    return user.uid ? <Navigate to="/" /> : <Outlet />;
+    return user.uid ? <Navigate to="/home" /> : <Outlet />;
 }
 
 export default RedirectRoute;
