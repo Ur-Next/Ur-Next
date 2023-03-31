@@ -90,24 +90,24 @@ function Users ({user,index,toggleRerender}) {
   
     return (
        
-           <div id="wrapper">
+        <div id="wrapper">
             <div id="dataGroup">
                 <div id="numberInLine" >{index+1}</div>
                 {isInEditMode?
                 <>
-                           <input type="text" className="textTypeData" placeholder="First name" name="firstName" required value={formData.firstName} onChange={handleFormDataChange}></input>
-                           <input type="text" className="textTypeData" placeholder="Last name" name="lastName" value={formData.lastName} onChange={handleFormDataChange}></input>
-                           <input type="date" className="dateTime" name="appointmentDate" required value={formData.appointmentDate} onChange={handleFormDataChange}></input>
-                           <input type="time" className="dateTime" name="appointmentTime" required value={formData.appointmentTime} onChange={handleFormDataChange}></input>
-                           <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="textTypeData" name="phone" placeholder="Tel." required value={formData.phone} onChange={handleFormDataChange}></input>
-                           <input type="email" className="textTypeData" placeholder="Email" name="email" required value={formData.email} onChange={handleFormDataChange}></input>
-                           <input type="text" className="textTypeData" placeholder="Symptoms" name="symptom" value={formData.symptom} onChange={handleFormDataChange}></input>
+                           <input type="text" placeholder="First name" name="firstName" required value={formData.firstName} onChange={handleFormDataChange}></input>
+                           <input type="text" placeholder="Last name" name="lastName" value={formData.lastName} onChange={handleFormDataChange}></input>
+                           <input type="date" name="appointmentDate" required value={formData.appointmentDate} onChange={handleFormDataChange}></input>
+                           <input type="time" name="appointmentTime" required value={formData.appointmentTime} onChange={handleFormDataChange}></input>
+                           <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="Tel." required value={formData.phone} onChange={handleFormDataChange}></input>
+                           <input type="email" placeholder="Email" name="email" required value={formData.email} onChange={handleFormDataChange}></input>
+                           <input type="text" placeholder="Symptoms" name="symptom" value={formData.symptom} onChange={handleFormDataChange}></input>
                 </>:
                 <>
                             <p  className="textTypeData">{formData.firstName}</p>
                             <p  className="textTypeData">{formData.lastName}</p>
-                            <p  id="date" >{formData.appointmentDate}</p>
-                            <p  id="time" >{formData.appointmentTime}</p>
+                            <p  >{formData.appointmentDate}</p>
+                            <p  >{formData.appointmentTime}</p>
                             <p  className="textTypeData" >{formData.phone}</p>
                             <p  className="textTypeData" >{formData.email}</p>
                             <p  className="textTypeData">{formData.symptom}</p>
