@@ -19,10 +19,10 @@ function ForgotPassword() {
 
     return (
         <div id="loginContainer">
-            <form onSubmit={handleFormSubmit}>
+            <form>
                 <p id="enterEmailMessage">Enter your email</p>
                 <input className="loginInput" type="email" name="email" placeholder="Email" value={formData.email} onChange={handleFormDataChange} />
-                <div className="loginBtn">Reset Password</div>
+                <div onClick={handleFormSubmit} className="loginBtn">Reset Password</div>
                 <Link className="forgotPass" to="/login">Return to Login</Link>
             </form>
         </div>
