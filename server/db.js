@@ -27,22 +27,34 @@ async function updateUser(id, userInfo) {
         console.log('userInfoooooooo',userInfo)
 
         if (userInfo.done) {
-            sendSMS(userInfo.appointmentDate)
+            sendSMS()
         }
     });
     
 }
 
-async function sendSMS(date) {
-    db.collection("users").find({ done: false},
+
+
+async function sendSMS() {
+    const date = new Date().toISOString().split('T')[0];
+    console.log('date',date)
+    const result = await db.collection("users").find({ done: false,notified: false, appointmentDate: date},{sort:{appointmentTime:-1},limit:1}).toArray()
+
+    console.log('result',result)
+    console.log('result.phone',result[0].phone)
+     await sendNotificationSMS(result[0].phone)
+
+
+
+    // db.collection("users").find({ done: false},
         
-        (err, res)=>{
-            if (err) throw err;
-            console.log('resssss',res)
-        // console.log('resssss',res)
-        sendNotificationSMS(res.phone)
-    }
-    )
+    //     (err, res)=>{
+    //         if (err) throw err;
+    //         console.log('resssss',res)
+    //     // console.log('resssss',res)
+    //     // sendNotificationSMS(res.phone)
+    // }
+    // )
 }
 
 
