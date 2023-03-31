@@ -16,7 +16,7 @@ function HomePage () {
     useEffect(()=>{
         fetch('/users').then(res=>res.json()).then(data=>{
             console.log(data)
-            const filteredData=data.filter(patient=>patient.done===false).sort((a,b)=>parseInt(a.appointmentTime) - parseInt(b.appointmentTime))
+            const filteredData=data.filter(patient=>patient.done===false).sort((a,b)=>parseInt(a.appointmentTime.replace(':','')) - parseInt(b.appointmentTime.replace(':','')))
             setUsersData(filteredData)})
     },[rerender]);
     
