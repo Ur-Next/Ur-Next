@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function FutureUsers({ user, index, toggleRerender }) {
     const [isInEditMode, setIsInEditMode] = useState(false);

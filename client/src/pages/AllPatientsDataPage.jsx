@@ -9,7 +9,8 @@ function AllPatientsDataPage() {
     const [futureUsersData, setFutureUsersData] = useState([]);
     const [rerender, setRerender] = useState(false);
     const [isPastPatientsShown, setIsPastPatientsShown] = useState(false);
-    const todayInMilliseconds = new Date(new Date().toISOString().slice(0, 10)).getTime();
+
+    const TODAY_IN_MILLISECONDS = new Date(new Date().toISOString().slice(0, 10)).getTime();
 
     function toggleRerender() {
         setRerender((prevRerender) => !prevRerender);
@@ -21,13 +22,13 @@ function AllPatientsDataPage() {
             .then((data) => {
                 console.log("data", data);
 
-                const pastFilteredData = data.filter((patient) => new Date(patient.appointmentDate).getTime() < todayInMilliseconds).sort((a, b) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());
-                const futureFilteredData = data.filter((patient) => new Date(patient.appointmentDate).getTime() >= todayInMilliseconds).sort((a, b) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());
+                const pastFilteredData = data.filter((patient) => new Date(patient.appointmentDate).getTime() < TODAY_IN_MILLISECONDS).sort((a, b) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());
+                const futureFilteredData = data.filter((patient) => new Date(patient.appointmentDate).getTime() >= TODAY_IN_MILLISECONDS).sort((a, b) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());
 
                 setPastUsersData(pastFilteredData);
                 setFutureUsersData(futureFilteredData);
             });
-    }, [rerender]);
+    }, [rerender, TODAY_IN_MILLISECONDS]);
 
     return (
         <div id="canvas">
