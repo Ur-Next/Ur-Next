@@ -7,6 +7,7 @@ import ProtectedRoute from "../components/ProtectedRoute";
 import RedirectRoute from "../components/RedirectRoute";
 import PatientPage from "./PatientPage";
 import MainPage from "./MainPage";
+import AllPatientsDataPage from "./AllPatientsDataPage";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
 
                 <Route path="/home" element={<ProtectedRoute />}>
                     <Route index element={<HomePage />} />
+                    <Route path="allPatients" element={<AllPatientsDataPage />} />
                 </Route>
 
                 <Route path="/login" element={<RedirectRoute />}>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Users({ user, index, toggleRerender }) {
+function FutureUsers({ user, index, toggleRerender }) {
     const [isInEditMode, setIsInEditMode] = useState(false);
     const [formData, setFormData] = useState({ firstName: user.firstName, lastName: user.lastName, phone: user.phone, email: user.email, symptom: user.symptom, appointmentDate: user.appointmentDate, appointmentTime: user.appointmentTime });
 
@@ -34,11 +34,11 @@ function Users({ user, index, toggleRerender }) {
     }
 
     //DONE BUTTON
-    function updatePatient(done = true) {
+    function updatePatient(undone = true) {
         let requestBody;
 
-        if (done) {
-            requestBody = JSON.stringify({ done: true });
+        if (undone) {
+            requestBody = JSON.stringify({ done: false });
         } else {
             requestBody = JSON.stringify(formData);
         }
@@ -81,6 +81,7 @@ function Users({ user, index, toggleRerender }) {
                         <p className="textTypeData">{formData.phone}</p>
                         <p className="textTypeData">{formData.email}</p>
                         <p className="textTypeData">{formData.symptom}</p>
+                        <p className="textTypeData">{user.done ? "Done" : "Not Done"}</p>
                     </>
                 )}
 
@@ -93,7 +94,7 @@ function Users({ user, index, toggleRerender }) {
                     {isInEditMode ? "Save" : "Edit"}
                 </button>
                 <button id="buttonDone" onClick={updatePatient}>
-                    Done
+                    Un-Done
                 </button>
                 <button id="buttonDel" onClick={DeletePatient}>
                     X
@@ -103,4 +104,4 @@ function Users({ user, index, toggleRerender }) {
     );
 }
 
-export default Users;
+export default FutureUsers;
