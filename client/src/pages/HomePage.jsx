@@ -13,17 +13,18 @@ function HomePage() {
     }
 
     function handleSorting(e) {
-        console.log(e.target.dataset.column);
         switch (e.target.dataset.column) {
-            case "appointmentTime":
-                setUsersData((prevUsersData) => prevUsersData.sort((a, b) => parseInt(a.appointmentTime.replace(":", "")) - parseInt(b.appointmentTime.replace(":", ""))));
-                break;
             case "firstName":
-                setUsersData((prevUsersData) => prevUsersData.sort((a, b) => a.firstName.localeCompare(b.firstName)));
+                setUsersData((prevUsersData) => [...prevUsersData.sort((a, b) => a.firstName.localeCompare(b.firstName))]);
                 break;
             case "lastName":
-                setUsersData((prevUsersData) => prevUsersData.sort((a, b) => a.lastName.localeCompare(b.lastName)));
+                setUsersData((prevUsersData) => [...prevUsersData.sort((a, b) => a.lastName.localeCompare(b.lastName))]);
                 break;
+            case "appointmentTime":
+                setUsersData((prevUsersData) => [...prevUsersData.sort((a, b) => parseInt(a.appointmentTime.replace(":", "")) - parseInt(b.appointmentTime.replace(":", "")))]);
+                break;
+            default:
+                return;
         }
     }
 
@@ -41,14 +42,14 @@ function HomePage() {
             <Header />
             <Form toggleRerender={toggleRerender} />
             <nav>
-                <button data-column="appointmentTime" onClick={handleSorting}>
-                    Sort By Appointment Time
-                </button>
                 <button data-column="firstName" onClick={handleSorting}>
                     Sort By First Name
                 </button>
                 <button data-column="lastName" onClick={handleSorting}>
                     Sort By Last Name
+                </button>
+                <button data-column="appointmentTime" onClick={handleSorting}>
+                    Sort By Appointment Time
                 </button>
             </nav>
             {usersData.map((user, index) => (
