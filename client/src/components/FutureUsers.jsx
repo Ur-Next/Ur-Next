@@ -60,7 +60,7 @@ function FutureUsers({ user, index, toggleRerender }) {
 
     return (
         <div id="wrapper">
-            <div id="dataGroup">
+            <div id="allPatientsDataGroup">
                 <div id="numberInLine">{index + 1}</div>
                 {isInEditMode ? (
                     <>
