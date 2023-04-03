@@ -1,7 +1,6 @@
 /* HEADER */
 
 #headerContainer {
-    
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -16,28 +15,21 @@
     /* outline: 3px solid rgb(197, 32, 32); */
 }
 
-
-
-
 /* LOGOUT */
 #logout {
-
     color: var(--grey);
     cursor: pointer;
     /* outline: 3px solid rgb(197, 32, 32); */
 }
 
 #logout:hover {
-    
-    opacity: 0.50;
+    opacity: 0.5;
     transition: opacity 200ms ease-in-out;
 }
 
-
-
 /* MAIN */
 p {
-    margin:0;
+    margin: 0;
     line-height: 1;
 }
 
@@ -46,7 +38,7 @@ p {
     max-width: 25px;
 
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     justify-self: end;
 
@@ -65,9 +57,7 @@ p {
     border-radius: 7px;
 }
 
-
 #canvas {
-
     width: 80vw;
     height: 100vh;
     margin: auto;
@@ -77,7 +67,6 @@ p {
 
     /* outline: 3px solid rgb(197, 32, 32); */
 }
-
 
 #formWrapper {
     height: 40px;
@@ -102,18 +91,16 @@ p {
     grid-gap: 10px;
 
     display: grid;
-    grid-template-columns: 40px repeat(10,1fr);
+    grid-template-columns: 40px repeat(10, 1fr);
 
     /* outline: 3px solid rgb(65, 193, 75); */
 }
-
-
 
 input {
     all: unset;
     min-width: 100%;
     color: var(--graphite);
-    font-family: 'Barlow', sans-serif;
+    font-family: "Barlow", sans-serif;
 
     /* outline: black 1px solid;     */
 }
@@ -123,24 +110,24 @@ input:focus {
 }
 
 input[type="date"],
-input[type="time"]  {
-
+input[type="time"] {
     all: unset;
     max-width: 80%;
     /* outline: black 1px solid;     */
 }
 
-
-::placeholder { 
+::placeholder {
     color: var(--lightgrey);
     font-size: var(--small);
     padding-left: 5px;
-
 }
 
+#dataContainer {
+    max-height: 100vh;
+    overflow: auto;
+}
 
 #wrapper {
-
     min-height: 40px;
 
     display: flex;
@@ -153,7 +140,7 @@ input[type="time"]  {
     border-right: 3px solid white;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    box-shadow: -3px 0px 6px 2px rgba(0,0,0,0.05);
+    box-shadow: -3px 0px 6px 2px rgba(0, 0, 0, 0.05);
     margin-bottom: 3px;
 
     /* outline: 3px solid rgb(38, 225, 197); */
@@ -164,12 +151,11 @@ input[type="time"]  {
     display: grid;
     grid-gap: 10px;
     /* grid-template-columns: 40px minmax(400px, 1fr) minmax(400px, 1fr) 100px 300px 2fr 50px; */
-    grid-template-columns:  40px repeat(10,1fr);
+    grid-template-columns: 40px repeat(10, 1fr);
     align-items: center;
 
     /* outline: 3px solid rgb(56, 18, 211); */
-  }
-
+}
 
 #numberInLine {
     display: flex;
@@ -181,18 +167,13 @@ input[type="time"]  {
 }
 
 .textTypeData {
-    
     border: none;
     background-color: var(--almostwhite);
 
     /* outline: black 1px solid; */
 }
 
-
-
-
 button {
-
     background: none;
     border: none;
     color: var(--blue);
@@ -200,21 +181,13 @@ button {
 }
 
 button:disabled {
-    color:var(--lightgrey);
+    color: var(--lightgrey);
 }
 
 button:hover {
-
-    opacity: 0.50;
+    opacity: 0.5;
     transition: opacity 200ms ease-in-out;
-};
-
-
-
-
-
-
-
+}
 
 /* -----VALIDATION----- */
 
@@ -222,4 +195,3 @@ button:hover {
 {
 
 } */
-

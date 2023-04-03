@@ -41,6 +41,7 @@ function HomePage() {
         <div id="canvas">
             <Header />
             <Form toggleRerender={toggleRerender} />
+
             <nav>
                 <button data-column="firstName" onClick={handleSorting}>
                     Sort By First Name
@@ -52,9 +53,13 @@ function HomePage() {
                     Sort By Appointment Time
                 </button>
             </nav>
-            {usersData.map((user, index) => (
-                <Users key={user._id} user={user} index={index} toggleRerender={toggleRerender} />
-            ))}
+
+            <div id="dataContainer">
+                {usersData.map((user, index) => (
+                    <Users key={user._id} user={user} index={index} toggleRerender={toggleRerender} />
+                ))}
+            </div>
+
             <Link to="/home/allPatients">See all patients</Link>
         </div>
     );

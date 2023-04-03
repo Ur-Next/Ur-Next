@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Users({ user, index, toggleRerender }) {
     const [isInEditMode, setIsInEditMode] = useState(false);

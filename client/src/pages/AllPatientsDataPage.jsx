@@ -37,8 +37,7 @@ function AllPatientsDataPage() {
                 <button onClick={() => setIsPastPatientsShown(false)}>See current and future patients</button>
                 <Link to="/home">Go back to home</Link>
             </nav>
-
-            {isPastPatientsShown ? pastUsersData.map((user, index) => <PastUsers key={user._id} user={user} index={index} toggleRerender={toggleRerender} />) : futureUsersData.map((user, index) => <FutureUsers key={user._id} user={user} index={index} toggleRerender={toggleRerender} />)}
+            <div id="dataContainer">{isPastPatientsShown ? pastUsersData.map((user, index) => <PastUsers key={user._id} user={user} index={index} toggleRerender={toggleRerender} />) : futureUsersData.map((user, index) => <FutureUsers key={user._id} user={user} index={index} toggleRerender={toggleRerender} />)}</div>
         </div>
     );
 }
