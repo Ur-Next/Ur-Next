@@ -20,7 +20,7 @@ function AllPatientsDataPage() {
         fetch("/users")
             .then((res) => res.json())
             .then((data) => {
-                console.log("data", data);
+                // console.log("data", data);
 
                 const pastFilteredData = data.filter((patient) => new Date(patient.appointmentDate).getTime() < TODAY_IN_MILLISECONDS).sort((a, b) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());
                 const futureFilteredData = data.filter((patient) => new Date(patient.appointmentDate).getTime() >= TODAY_IN_MILLISECONDS).sort((a, b) => new Date(a.appointmentDate).getTime() - new Date(b.appointmentDate).getTime());

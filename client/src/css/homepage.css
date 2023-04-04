@@ -68,6 +68,7 @@ p {
     /* outline: 3px solid rgb(197, 32, 32); */
 }
 
+
 #formWrapper {
     height: 40px;
 
@@ -122,9 +123,37 @@ input[type="time"] {
     padding-left: 5px;
 }
 
+#sortingContainer {
+
+    display: grid;
+  
+    grid-template-columns: 40px repeat(11, 1fr);
+    margin-bottom: 10px;
+
+    /* outline: 3px solid rgb(56, 18, 211); */
+}
+
+.sortingBtn {
+    all: unset;
+    height: 40px;
+    text-align: center;
+    color: var(--blue);
+    font-size: var(--tiny);
+}
+
+.sortingBtn:hover {
+    all: unset;
+    height: 40px;
+    color: var(--blue);
+    font-size: var(--tiny);
+    font-weight: bold;
+    transition:font-size 300ms ease-in-out;
+}
+
 #dataContainer {
     max-height: 100vh;
     overflow: auto;
+    /* outline: 3px solid rgb(38, 225, 197); */
 }
 
 #wrapper {
@@ -132,8 +161,6 @@ input[type="time"] {
 
     display: flex;
     align-items: center;
-
-    /* justify-content: space-around; */
 
     background-color: var(--almostwhite);
     border-radius: 7px;
@@ -143,16 +170,17 @@ input[type="time"] {
     box-shadow: -3px 0px 6px 2px rgba(0, 0, 0, 0.05);
     margin-bottom: 3px;
 
-    /* outline: 3px solid rgb(38, 225, 197); */
+    /* outline: 3px solid rgb(225, 38, 163); */
 }
 
 #dataGroup {
     width: 100vw;
     display: grid;
     grid-gap: 10px;
-    /* grid-template-columns: 40px minmax(400px, 1fr) minmax(400px, 1fr) 100px 300px 2fr 50px; */
+  
     grid-template-columns: 40px repeat(10, 1fr);
     align-items: center;
+
 
     /* outline: 3px solid rgb(56, 18, 211); */
 }
@@ -181,7 +209,7 @@ input[type="time"] {
     border: none;
     background-color: var(--almostwhite);
 
-    /* outline: black 1px solid; */
+    outline: black 1px solid;
 }
 
 button {

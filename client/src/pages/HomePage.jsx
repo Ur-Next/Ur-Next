@@ -42,16 +42,23 @@ function HomePage() {
             <Header />
             <Form toggleRerender={toggleRerender} />
 
-            <nav>
-                <button data-column="firstName" onClick={handleSorting}>
+            <nav id="sortingContainer">
+                <div></div>
+                <button className="sortingBtn" data-column="firstName" onClick={handleSorting}>
                     Sort By First Name
                 </button>
-                <button data-column="lastName" onClick={handleSorting}>
+                <button  className="sortingBtn" data-column="lastName" onClick={handleSorting}>
                     Sort By Last Name
                 </button>
-                <button data-column="appointmentTime" onClick={handleSorting}>
-                    Sort By Appointment Time
+                <div></div>
+                <button className="sortingBtn" data-column="appointmentTime" onClick={handleSorting}>
+                    Sort By Time
                 </button>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </nav>
 
             <div id="dataContainer">

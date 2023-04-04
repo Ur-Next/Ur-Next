@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { sendNotificationSMS, sendRegistrationSMS } from '../../../server/twilio/twilio'; //OUTSIDE THE PROJECT (moved in, tons of errors - environment not set up)
+
 
 function PastUsers({ user, index }) {
     return (
