@@ -1,3 +1,9 @@
+#patientTelInput {
+    background-color: rgb(248, 247, 245);
+    outline: 1px black solid;
+}
+
+
 #patientMainContainer {
 
     display:flex;
