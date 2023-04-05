@@ -33,8 +33,6 @@ async function updateUser(id, userInfo) {
     
 }
 
-
-
 async function sendSMS() {
     const date = new Date().toISOString().split('T')[0];
     console.log('date',date)
@@ -74,6 +72,12 @@ async function deleteUser(id) {
     });
 }
 
+async function getUserByPhone(phone){
+    const result = await db.collection("users").find({phone:phone}).toArray();
+    console.log(result[0].appointmentTime)
+    return ({appointmentTime: result[0].appointmentTime, peopleAhead: 0});
+}
+
 async function getUsers() {
     const result = await db.collection("users").find().toArray();
     return result;
@@ -81,4 +85,4 @@ async function getUsers() {
 
 // mongoose.disconnect()
 
-module.exports = { getUsers, createUser, updateUser, deleteUser };
+module.exports = { getUsers, createUser, updateUser, deleteUser, getUserByPhone };

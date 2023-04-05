@@ -1,5 +1,5 @@
 const express = require("express");
-const { createUser, getUsers, updateUser, deleteUser } = require("./db");
+const { createUser, getUsers, updateUser, deleteUser, getUserByPhone } = require("./db");
 const { sendRegistrationSMS } = require("./twilio/twilio");
 
 
@@ -23,7 +23,8 @@ app.post("/user", (req, res) => {
 
 });
 
-//
+
+// update users
 app.post("/user/:id", (req, res) => {
     updateUser(req.params.id, req.body).then((x) => {
 
@@ -39,12 +40,20 @@ app.delete("/user/:id", (req, res) => {
     });
 });
 
+// get user based on phone number
+app.get("/user/:phone", (req, res) => {
+    console.log(req.params.phone)
+    getUserByPhone(req.params.phone).then((x) => {
+        res.json(x);
+    })
+});
+
 app.get("/users", (req, res) => {
     getUsers().then((x) => {
         res.send(x);
-       
     });
 });
+
 
 app.listen(app.get("port"), () => {
     console.info(`Server listen on port ${app.get("port")}`);
