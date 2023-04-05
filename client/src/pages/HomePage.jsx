@@ -42,6 +42,7 @@ function HomePage() {
             <Header />
             <Form toggleRerender={toggleRerender} />
 
+            {/* SORTING */}
             <nav id="sortingContainer">
                 <div></div>
                 <button className="sortingBtn" data-column="firstName" onClick={handleSorting}>
@@ -61,6 +62,7 @@ function HomePage() {
                 <div></div>
             </nav>
 
+            {/* USERS */}
             <div id="dataContainer">
                 {usersData.map((user, index) => (
                     <Users key={user._id} user={user} index={index} toggleRerender={toggleRerender} />
