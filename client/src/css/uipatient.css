@@ -7,11 +7,13 @@
 }
 
 .patientMainContainer {
+    position: relative;
 
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     
     width:400px;
     height: 40vh;
@@ -20,9 +22,8 @@
     margin-left: auto;
 
     background-color: var(--almostwhite);
-    /* background-image: url("../images/bg_colors_1200.png");
-    background-position: 50% 50%;
-    background-size: cover;  */
+    
+    
 
 
     border-radius: 7px;
@@ -33,39 +34,55 @@
     /* outline: 1px black solid; */
 }
 
+.patientMainContainer::before {
+    position: absolute;
+    content: "";
+
+    background-image: url("../images/bg_colors_1200.png");
+    background-position: 45% 65%;
+    background-size: 160%; 
+    opacity: 0.3;
+
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    /* outline: 1px black solid; */
+}
+
+#mainForm {
+position: relative;
+}
+
 .messageText {
+    position: relative;
+
     line-height: 1.3;
     max-width: 80%;
     text-align: center;
     color: var(--grey);
 }
 
-
-input{
-
+#inputTel {
     all:unset;
-    width: 60%;
+    width: 70%;
     height: 50px;
     border-radius: 7px;
     margin-top: 1rem;
-    margin-bottom: 1rem;
-
+    margin-bottom: 1.7rem;
+    text-align: center;
     background-color: white; 
-    /* box-shadow: inset -5px -5px 10px 0px rgba(0,0,0,0.1); */
+    color: var(--blue);
+    font-size: var(--font-large);
     /* outline: 1px black solid; */
 }
 
-
-input[type="tel"] {
-    text-align: center;
-    color: var(--blue);
-    font-size: var(--font-large);
-}
-
-::placeholder {
-    color: var(--lightgrey);
+#inputTel::placeholder {
+    color: var(--lightlightblue);
     font-size: var(--small);
     text-align: center;
+    font-weight: lighter;
 }
 
 

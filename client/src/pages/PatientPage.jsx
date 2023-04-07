@@ -14,6 +14,7 @@ function InfoForPatient() {
     fetch(`/users/${userTel}`).then((res) =>
       res.json().then((usersData) => {
 
+        console.log(usersData);
         setResponseData({ appointmentTime: usersData.appointmentTime, peopleAhead: usersData.peopleAhead });
         setIsFormShown(false);
       })
@@ -29,14 +30,15 @@ function InfoForPatient() {
       <img className="logoGrayedOut" src="./img/Logo_urnext_400.png" alt="Logo Urnext"></img>
       
       {isFormShown ?
-
-        <form class="patientMainContainer">
-          <p className="messageText">Enter your phone number<br />to see when you are going to be admitted</p>
-          <input type="tel" placeholder="xxxxxxxxxx" onChange={handleFormChange} value={userTel}></input>
+      <div  className="patientMainContainer">
+        <form id="mainForm">
+          <p className="messageText"><b>Enter your phone number</b><br />to see when you are going to be admitted</p>
+          <input id="inputTel" type="tel" placeholder="xxxxxxxxxx" onChange={handleFormChange} value={userTel}></input>
           <button type="submit" onClick={handleSubmitTel}>Submit</button>
         </form>
+      </div>
       :
-        <div class="patientMainContainer">
+        <div className="patientMainContainer">
           <p className="messageText">Your estimate appointment time</p>
           <div id="timeAppointment">{responseData.appointmentTime}</div>
           <p className="messageText">Patients in the line ahead of you</p>

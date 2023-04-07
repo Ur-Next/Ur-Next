@@ -74,7 +74,7 @@ p {
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    /* justify-content: flex-end; */
 
     background-color: var(--almostwhite);
     border-right: 3px solid white;
@@ -82,7 +82,7 @@ p {
     border-bottom: 1px solid white;
     border-radius: 7px;
 
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 
     /* outline: 3px solid rgb(162, 96, 173); */
 }
@@ -99,15 +99,18 @@ p {
 
 input {
     all: unset;
+
     min-width: 100%;
     color: var(--graphite);
     font-family: "Barlow", sans-serif;
+    /* background-color: var(--almostwhite); */
 
     /* outline: black 1px solid;     */
 }
 
 input:focus {
     outline: none;
+    background-color: var(--almostwhite);
 }
 
 input[type="date"],
@@ -117,10 +120,17 @@ input[type="time"] {
     /* outline: black 1px solid;     */
 }
 
+/* input:autofill {
+    background-color: rgb(232, 240, 254) !important;
+    border: 3px solid blue;
+  } */
+
+
 ::placeholder {
     color: var(--lightgrey);
     font-size: var(--small);
     padding-left: 5px;
+
 }
 
 #sortingContainer {
@@ -130,24 +140,43 @@ input[type="time"] {
     grid-template-columns: 40px repeat(11, 1fr);
     margin-bottom: 10px;
 
+    cursor: pointer;
+
     /* outline: 3px solid rgb(56, 18, 211); */
 }
 
 .sortingBtn {
     all: unset;
-    height: 40px;
+    min-height: 30px;
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+
+    line-height: 1.3;
     color: var(--blue);
     font-size: var(--tiny);
+    border-bottom: var(--lightblue) 1px solid;
 }
 
 .sortingBtn:hover {
     all: unset;
-    height: 40px;
+    min-height: 30px;
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    
+    line-height: 1.3;
     color: var(--blue);
     font-size: var(--tiny);
     font-weight: bold;
+    border-bottom: var(--lightblue) 1px solid;
+
     transition:font-size 300ms ease-in-out;
 }
 
@@ -218,6 +247,7 @@ button {
     border: none;
     color: var(--blue);
     font-size: var(--small);
+    cursor: pointer;
 }
 
 button:disabled {
@@ -225,6 +255,27 @@ button:disabled {
 }
 
 button:hover {
+    opacity: 0.5;
+    transition: opacity 200ms ease-in-out;
+}
+
+#seeAllPatientsLink {
+    all:unset;
+
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-self: flex-end;
+
+    background: none;
+    border: none;
+    color: var(--blue);
+    font-size: var(--small);
+
+    cursor: pointer;
+}
+
+#seeAllPatientsLink:hover {
     opacity: 0.5;
     transition: opacity 200ms ease-in-out;
 }
