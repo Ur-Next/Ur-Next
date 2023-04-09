@@ -158,8 +158,10 @@ input[type="time"] {
     line-height: 1.3;
     color: var(--blue);
     font-size: var(--tiny);
-    border-bottom: var(--lightblue) 1px solid;
+    border-bottom: var(--lightlightblue) 2px solid;
+
 }
+
 
 .sortingBtn:hover {
     all: unset;
@@ -175,7 +177,7 @@ input[type="time"] {
     color: var(--blue);
     font-size: var(--tiny);
     font-weight: bold;
-    border-bottom: var(--lightblue) 1px solid;
+    border-bottom: var(--lightlightblue) 2px solid;
 
     transition:font-size 300ms ease-in-out;
 }
