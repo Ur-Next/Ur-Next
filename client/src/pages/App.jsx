@@ -14,6 +14,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainPage />} />
+                <Route path="*" element={<MainPage />} />
 
                 <Route path="/home" element={<ProtectedRoute />}>
                     <Route index element={<HomePage />} />
