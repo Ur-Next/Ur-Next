@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-
-
 function PastUsers({ user, index }) {
     return (
         <div id="wrapper">
