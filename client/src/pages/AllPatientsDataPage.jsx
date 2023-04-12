@@ -9,12 +9,17 @@ function AllPatientsDataPage() {
     const [futureUsersData, setFutureUsersData] = useState([]);
     const [rerender, setRerender] = useState(false);
     const [isPastPatientsShown, setIsPastPatientsShown] = useState(false);
+    
 
     const TODAY_IN_MILLISECONDS = new Date(new Date().toISOString().slice(0, 10)).getTime();
 
     function toggleRerender() {
         setRerender((prevRerender) => !prevRerender);
-    }
+    };
+
+    function handleChange(event) {
+        setIsPastPatientsShown(event.target.value)
+    };
 
     useEffect(() => {
         fetch("/users")
@@ -33,8 +38,15 @@ function AllPatientsDataPage() {
     return (
         <div id="canvas">
             <Header />
-            <nav id="navigationTabs">
-                <button onClick={() => setIsPastPatientsShown(true)}>See past patients</button>
+            <nav className="Tabs">
+            <label for="tabone">See past patients
+                <input
+                    type="radio"
+                    checked = {() => setIsPastPatientsShown(true)}
+                    onChange = {handleChange} />
+            </label>
+                
+                {/* <button onClick={() => setIsPastPatientsShown(true)}>See past patients</button> */}
                 <button onClick={() => setIsPastPatientsShown(false)}>See current and future patients</button>
                 <Link to="/home">Go back to home</Link>
             </nav>
