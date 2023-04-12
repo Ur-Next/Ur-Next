@@ -274,6 +274,27 @@ button:hover {
     transition: opacity 200ms ease-in-out;
 }
 
+/* ALL PATIENTS PAGE */
+
+#navigationTabs {
+
+    margin-bottom: 30px;
+
+    display: flex;
+
+    outline: black 1px solid;
+}
+
+#navigationTabs>* {
+
+    background-color: var(--almostwhite);
+    padding: 5px;
+    ;
+
+} 
+
+
+
 /* -----VALIDATION----- */
 
 /* input :valid

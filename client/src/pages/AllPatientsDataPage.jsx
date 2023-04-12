@@ -33,7 +33,7 @@ function AllPatientsDataPage() {
     return (
         <div id="canvas">
             <Header />
-            <nav>
+            <nav id="navigationTabs">
                 <button onClick={() => setIsPastPatientsShown(true)}>See past patients</button>
                 <button onClick={() => setIsPastPatientsShown(false)}>See current and future patients</button>
                 <Link to="/home">Go back to home</Link>
