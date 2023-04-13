@@ -8,7 +8,7 @@ function AllPatientsDataPage() {
     const [pastUsersData, setPastUsersData] = useState([]);
     const [futureUsersData, setFutureUsersData] = useState([]);
     const [rerender, setRerender] = useState(false);
-    const [isPastPatientsShown, setIsPastPatientsShown] = useState(false);
+    const [isPastPatientsShown, setIsPastPatientsShown] = useState('false');
     
 
     const TODAY_IN_MILLISECONDS = new Date(new Date().toISOString().slice(0, 10)).getTime();
@@ -61,7 +61,8 @@ function AllPatientsDataPage() {
                         id="tab2"
                         value="false"
                         checked = {isPastPatientsShown === "false"} 
-                        onChange = {handleChange} />
+                        onChange = {handleChange} 
+                        />
                 <label htmlFor="tab2">Current and future patients</label>
                     {/* <button onClick={() => setIsPastPatientsShown(false)}>See current and future patients</button> */}
                     
