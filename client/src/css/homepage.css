@@ -60,12 +60,15 @@ p {
 #canvas {
     width: 80vw;
     height: 100vh;
-    margin: auto;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
 
     display: flex;
     flex-direction: column;
 
-    /* outline: 3px solid rgb(197, 32, 32); */
+
+    outline: 3px solid rgb(197, 32, 32);
 }
 
 #formWrapper {
@@ -277,67 +280,61 @@ button:hover {
 /* ALL PATIENTS PAGE */
 
 .Tabs {
+    /* position: absolute; */
+
     display: flex;
-    flex-wrap: wrap;
-    height: 300px;
-    width: 500px;
-    outline: black 1px solid;
+    align-items: flex-end;
+
+
+    width: 100%;
+    height: 150px;
+    outline: black 3px solid;
 }
 
-.Tabs label {
-    /* order: 1; */
+ .Tabs > input[type="radio"] {
+    /* all:unset;   */
+    /* width: 200px;
+    height: 40px; */
+    /* background-color: rgb(237, 223, 19); */
+    
+    display: none;
+  }
+
+
+  .Tabs > label {
+
+    padding: 1rem;
+
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    padding: 1rem 2rem;
-    margin-right: 0.2rem;
+    text-align: center;
 
     cursor: pointer;
-    background-color: rgb(63, 206, 82);
-    font-weight: bold;
-    transition: background ease 0.3s;
-
-    outline: black 1px solid;
+    transition: background-color ease 0.3s;
+    
+    /* background-color: rgb(63, 206, 82); */
+    /* outline: black 1px solid; */
   }
 
-  /* .Tabs .tab {
-    order: 9;
-    flex-grow: 1;
-    width: 100%;
-    height: 100%;
-    display: none;
+
+ .Tabs > input[type="radio"]:checked + label {
+
     padding: 1rem;
-    background: #fff;
-    padding: 20px;
-    box-shadow: -10px 10px 0px 0px black;
-  } */
 
-  .Tabs input[type="radio"] {
-    z-index: 9;
-    width: 40px;
-    background-color: aqua;
-    /* display: none; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    font-weight: bold;
+    background-color: var(--almostwhite);
+    transition: background-color ease 0.3s;
+
+    /* outline: black 1px solid; */
+
   }
 
-  /* .Tabs input[type="radio"]:checked + label {
-    background: #e61a1a;
-  }
 
-  .Tabs input[type="radio"]:checked + label + .tab {
-    display: block;
-  } */
-
-  @media (max-width: 465px) {
-    .tabs .tab,
-    .tabs label {
-     order: initial;
-    }
-    .tabs label {
-        width: 100%;
-        margin-left: 50px;
-      }
-    }
+  
 
 
 /* -----VALIDATION----- */
