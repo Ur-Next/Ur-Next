@@ -57,10 +57,11 @@ async function getUserByPhone(phone)
 
     console.log('all appts today', apptToday)
 
-   
-    
-    // const index = await db.collection('users').getIndexes()
-    // console.log(index)
+    const sortedTimes = new Date(apptToday[0].appointmentDate.toString(), ' ', apptToday[0].appointmentTime.toString())
+    console.log('sorted: ', sortedTimes)
+
+    console.log((apptToday[0].appointmentDate + ' ' + apptToday[0].appointmentTime))
+  
 
     return (
         {
