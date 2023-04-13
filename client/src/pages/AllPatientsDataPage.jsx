@@ -42,31 +42,31 @@ function AllPatientsDataPage() {
     return (
         <div id="canvas">
             <Header />
+            <Link id="linkBackHome" to="/home">Go back to home</Link>
             <nav className="Tabs">
-                {/* --Tab 1 -- */}
-            <input
-                    type="radio"
-                    id="tab1"
-                    value="true"
-                    // checked = {() => setIsPastPatientsShown(true)}
-                    checked = {isPastPatientsShown === "true"}
-                    onChange = {handleChange} />
-            <label htmlFor="tab1">Past patients</label>
-                {/* <button onClick={() => setIsPastPatientsShown(true)}>See past patients</button> */}
+                    {/* --Tab 1 -- */}
+                <input
+                        type="radio"
+                        id="tab1"
+                        value="true"
+                        // checked = {() => setIsPastPatientsShown(true)} // did work, but threw message in the console - did not like the function, required a string
+                        checked = {isPastPatientsShown === "true"}
+                        onChange = {handleChange} />
+                <label htmlFor="tab1">Past patients</label>
+                    {/* <button onClick={() => setIsPastPatientsShown(true)}>See past patients</button> */}
 
-                {/* --Tab 2 -- */}
-
-            <input
-                    type="radio"
-                    id="tab2"
-                    value="false"
-                    checked = {isPastPatientsShown === "false"} 
-                    onChange = {handleChange} />
-            <label htmlFor="tab2">Current and future patients</label>
-                
-                {/* <button onClick={() => setIsPastPatientsShown(false)}>See current and future patients</button> */}
-                <Link to="/home">Go back to home</Link>
+                    {/* --Tab 2 -- */}
+                <input
+                        type="radio"
+                        id="tab2"
+                        value="false"
+                        checked = {isPastPatientsShown === "false"} 
+                        onChange = {handleChange} />
+                <label htmlFor="tab2">Current and future patients</label>
+                    {/* <button onClick={() => setIsPastPatientsShown(false)}>See current and future patients</button> */}
+                    
             </nav>
+
             <div id="dataContainer">{isPastPatientsShown === "true" ? pastUsersData.map((user, index) => <PastUsers key={user._id} user={user} index={index} toggleRerender={toggleRerender} />) : futureUsersData.map((user, index) => <FutureUsers key={user._id} user={user} index={index} toggleRerender={toggleRerender} />)}</div>
         </div>
     );

@@ -1,0 +1,80 @@
+/* ALL PATIENTS PAGE */
+
+.Tabs {
+    /* position: absolute; */
+
+    display: flex;
+    align-items: flex-end;
+
+
+    width: 100%;
+    height: 50px;
+    /* outline: black 3px solid; */
+}
+
+ .Tabs > input[type="radio"] {
+    /* all:unset;   */
+    /* width: 200px;
+    height: 40px; */
+    /* background-color: rgb(237, 223, 19); */
+    
+    display: none;
+  }
+
+
+  .Tabs > label {
+
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+    transition: background-color ease 0.3s;
+
+    color: var(--grey);
+    
+    /* background-color: rgb(63, 206, 82); */
+    /* outline: black 1px solid; */
+  }
+
+
+ .Tabs > input[type="radio"]:checked + label {
+
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    font-weight: bold;
+    
+    background-color: var(--almostwhite);
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+
+    transition: background-color ease 0.3s;
+
+    color: var(--blue);
+
+    /* outline: black 1px solid; */
+  }
+
+  /* LINK BACK TO HOME */
+#linkBackHome {
+
+    all:unset;
+
+    display: flex;
+    align-self: flex-end;
+
+    color: var(--grey);
+    cursor: pointer;
+    /* outline: 3px solid rgb(197, 32, 32); */
+}
+
+#linkBackHome:hover {
+    opacity: 0.5;
+    transition: opacity 200ms ease-in-out;
+}
