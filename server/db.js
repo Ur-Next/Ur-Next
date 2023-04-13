@@ -48,7 +48,19 @@ async function getUserByPhone(phone)
     // console.log(result[0].firstName, result[0].appointmentDate, result[0].appointmentTime)
     console.log('records with matching phone number: ', result)
     
-  
+    // find all appts today
+    const apptToday = await db.collection("users").find({appointmentDate:date, done: false}).toArray();
+    
+    // number of people/appts today
+    const numberPeople = apptToday.length;
+    console.log('number of people: ', numberPeople)
+
+    console.log('all appts today', apptToday)
+
+   
+    
+    // const index = await db.collection('users').getIndexes()
+    // console.log(index)
 
     return (
         {
