@@ -52,10 +52,12 @@ async function getUserByPhone(phone)
     
     // number of people/appts today
     const numberPeople = apptToday.length;
-    console.log('number of people: ', numberPeople)
-    console.log('all appts today', apptToday)
+    console.log(`Total number of people: ${numberPeople}\n`)
 
-    // const sortedTimes = new Date(apptToday[0].appointmentDate.toString(), ' ', apptToday[0].appointmentTime.toString())
+    console.log('ALL APPTS TODAY')
+    apptToday.map(x=> console.log(x.firstName, x.appointmentTime));
+
+    console.log(`\n\nPeople before user with matched phone number: ${phone}`)
 
     let count = 0
     for (let i = 0; i < apptToday.length; i++) 
@@ -120,17 +122,6 @@ async function deleteUser(id) {
         if (err) return console.log(err);
     });
 }
-
-
-
-
-// async function getUserByPhone(phone){
-//     const result = await db.collection("users").find({phone:phone}).toArray();
-//     console.log(result[1].appointmentTime)
-//     return ({appointmentTime: result[1].appointmentTime, peopleAhead: 2});
-// }
-
-
 
 // mongoose.disconnect()
 
