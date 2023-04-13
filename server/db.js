@@ -33,6 +33,32 @@ async function updateUser(id, userInfo) {
     
 }
 
+async function getUsers() {
+    const result = await db.collection("users").find().toArray();
+    return result;
+}
+
+async function getUserByPhone(phone)
+{
+    const date = new Date().toISOString().split('T')[0];
+    console.log('date',date)
+
+    // Find user with matching phone number 
+    const result = await db.collection("users").find({appointmentDate: date, done: false, phone:phone}).toArray();
+    // console.log(result[0].firstName, result[0].appointmentDate, result[0].appointmentTime)
+    console.log('records with matching phone number: ', result)
+    
+  
+
+    return (
+        {
+            firstName: result[0].firstName,
+            firstName: result[0].lastName,
+            appointmentTime: result[0].appointmentTime, 
+            peopleAhead: numberPeople
+        });
+}
+
 async function sendSMS() {
     const date = new Date().toISOString().split('T')[0];
     console.log('date',date)
@@ -72,16 +98,16 @@ async function deleteUser(id) {
     });
 }
 
-async function getUserByPhone(phone){
-    const result = await db.collection("users").find({phone:phone}).toArray();
-    console.log(result[0].appointmentTime)
-    return ({appointmentTime: result[0].appointmentTime, peopleAhead: 0});
-}
 
-async function getUsers() {
-    const result = await db.collection("users").find().toArray();
-    return result;
-}
+
+
+// async function getUserByPhone(phone){
+//     const result = await db.collection("users").find({phone:phone}).toArray();
+//     console.log(result[1].appointmentTime)
+//     return ({appointmentTime: result[1].appointmentTime, peopleAhead: 2});
+// }
+
+
 
 // mongoose.disconnect()
 
