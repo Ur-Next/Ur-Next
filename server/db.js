@@ -57,11 +57,29 @@ async function getUserByPhone(phone)
 
     console.log('all appts today', apptToday)
 
-    const sortedTimes = new Date(apptToday[0].appointmentDate.toString(), ' ', apptToday[0].appointmentTime.toString())
-    console.log('sorted: ', sortedTimes)
+    // const sortedTimes = new Date(apptToday[0].appointmentDate.toString(), ' ', apptToday[0].appointmentTime.toString())
+    // console.log('sorted: ', sortedTimes)
 
-    console.log((apptToday[0].appointmentDate + ' ' + apptToday[0].appointmentTime))
-  
+    // console.log((apptToday[0].appointmentDate + ' ' + apptToday[0].appointmentTime))
+    let count = 0
+    for (let i = 0; i < apptToday.length; i++) 
+    {
+        const time1 = new Date(apptToday[i].appointmentDate + ' ' + apptToday[i].appointmentTime)
+        const time2 = new Date(result[0].appointmentDate + ' ' + result[0].appointmentTime)
+
+        // console.log(time1 + ' ' + time2)
+        // if (new Date('01/01/2011 ' + apptToday[i].appointmentTime) < new Date('01/01/2011 ' + result[0].appointmentTime)) 
+        if (time1 < time2) 
+        {
+            console.log(apptToday[i].firstName, ' ', apptToday[i].appointmentTime)
+            count++;
+        }
+    }
+
+    console.log('count: ', count)
+    
+    // const index = await db.collection('users').getIndexes()
+    // console.log(index)
 
     return (
         {
