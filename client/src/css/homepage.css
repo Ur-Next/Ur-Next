@@ -88,7 +88,7 @@ p {
 
     /* outline: 3px solid rgb(162, 96, 173); */
 }
-
+/* __________________________________________________ */
 #form {
     width: 100%;
     grid-gap: 10px;
@@ -97,41 +97,150 @@ p {
     grid-template-columns: 40px repeat(10, 1fr);
 
     /* outline: 3px solid rgb(65, 193, 75); */
-}
+} 
 
-input {
+
+#form > input {
     all: unset;
 
     min-width: 100%;
     color: var(--graphite);
     font-family: "Barlow", sans-serif;
-    /* background-color: var(--almostwhite); */
+    background-color: var(--almostwhite);
 
     /* outline: black 1px solid;     */
 }
 
-input:focus {
+           
+
+#form > input[type="date"],
+#form > input[type="time"] {
+        all: unset;
+        max-width: 80%;
+        /* outline: black 1px solid;     */
+    }
+
+#form > input:focus {
     outline: none;
     background-color: var(--almostwhite);
 }
 
-input[type="date"],
-input[type="time"] {
-    all: unset;
-    max-width: 80%;
-    /* outline: black 1px solid;     */
-}
-
-/* input:autofill {
-    background-color: rgb(232, 240, 254) !important;
-    border: 3px solid blue;
-  } */
+            /* input:autofill {
+                background-color: rgb(232, 240, 254) !important;
+                border: 3px solid blue;
+            } */
 
 ::placeholder {
     color: var(--lightgrey);
     font-size: var(--small);
     padding-left: 5px;
 }
+
+#form > input:valid {
+    /* background: green; */
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+}
+
+#form >input[type="email"]:invalid:not(:focus):not(:placeholder-shown) {
+                background: pink;
+            }
+#form >input[type="tel"]:invalid:not(:focus):not(:placeholder-shown) {
+                background: pink;
+            }
+
+#form >:invalid:focus:not(:placeholder-shown) ~ .requirements {
+                   
+                  max-height: 200px;
+                  padding: 0 30px 20px 50px;
+                
+              }
+            
+
+.requirements {
+    padding: 0 30px 0 50px;
+    color: #999;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
+}
+/* _______________________________________________________ */
+
+
+/* #form {
+    width: 100%;
+    grid-gap: 10px;
+
+    display: grid;
+    grid-template-columns: 40px repeat(10, 1fr);
+
+    /* outline: 3px solid rgb(65, 193, 75); */
+/* } */
+
+/* input {
+    all: unset;
+
+    min-width: 100%;
+    color: var(--graphite);
+    font-family: "Barlow", sans-serif; */
+    /* background-color: var(--almostwhite); */
+
+    /* outline: black 1px solid;     */
+/* } */
+
+/* input:focus {
+    outline: none;
+    background-color: var(--almostwhite);
+} */
+
+/* input[type="date"],
+input[type="time"] {
+    all: unset;
+    max-width: 80%;
+    outline: black 1px solid;    
+} */
+
+/* input:autofill {
+    background-color: rgb(232, 240, 254) !important;
+    border: 3px solid blue;
+  } */
+
+/* ::placeholder {
+    color: var(--lightgrey);
+    font-size: var(--small);
+    padding-left: 5px;
+} */
+
+/* input:valid {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+} */
+
+/* input:valid:not(:placeholder-shown) {
+    & ~ .requirements {
+        max-height: 200px;
+        padding: 0 30px 20px 50px;
+    }
+} */
+
+/* .requirements {
+    padding: 0 30px 0 50px;
+    color: #999;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
+} */
+
+
+
+
 
 #sortingContainer {
     display: grid;

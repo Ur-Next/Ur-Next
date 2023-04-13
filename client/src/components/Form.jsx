@@ -31,7 +31,7 @@ function Form({toggleRerender}) {
                 <input className="textTypeData" type="text"  placeholder="Last name" name="lastName" value={formData.lastName} onChange={handleFormDataChange}></input>
                 <input type="date" name="appointmentDate" required value={formData.appointmentDate} onChange={handleFormDataChange}></input>
                 <input type="time"  name="appointmentTime" required value={formData.appointmentTime} onChange={handleFormDataChange}></input>
-                <input className="textTypeData" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="Tel." required value={formData.phone} onChange={handleFormDataChange}></input>
+                <input className="textTypeData" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phone" placeholder="Tel." required value={formData.phone} onChange={handleFormDataChange}></input>
                 <input className="textTypeData" type="email" placeholder="Email" name="email" required value={formData.email} onChange={handleFormDataChange}></input>
                 <input className="textTypeData" type="text" placeholder="Symptoms" name="symptom" value={formData.symptom} onChange={handleFormDataChange}></input>
                 <button onClick={handleFormSubmit}>Submit</button>
