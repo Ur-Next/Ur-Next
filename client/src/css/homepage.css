@@ -105,21 +105,28 @@ p {
 
     min-width: 100%;
     color: var(--graphite);
+    font-size: var(--font-med);
     font-family: "Barlow", sans-serif;
     background-color: var(--almostwhite);
 
     /* outline: black 1px solid;     */
 }
+input {
+    color: var(--contrastgrey);
+    font-size: var(--font-big);
+    font-family: "Barlow", sans-serif;
+}
 
-#form > input[type="date"],
-#form > input[type="time"] {
+
+input[type="date"],
+input[type="time"] {
     all: unset;
     max-width: 80%;
 
     /* outline: black 1/px solid;     */
 }
 
-#form > input:focus {
+input:focus {
     outline: none;
     background-color: var(--almostwhite);
 }

@@ -12,7 +12,7 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 
     
     width:400px;
@@ -23,9 +23,6 @@
 
     background-color: var(--almostwhite);
     
-    
-
-
     border-radius: 7px;
     border-right: 3px solid white;
     border-top: 1px solid white;
@@ -52,7 +49,27 @@
 }
 
 #mainForm {
-position: relative;
+
+    position: relative;
+    margin-top: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    /* outline: 1px black solid; */
+}
+
+.coreDataBlock {
+
+    position: relative;
+    margin:auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* outline: 1px black solid; */
 }
 
 .messageText {
@@ -86,7 +103,6 @@ position: relative;
 }
 
 
-
 #timeAppointment {
     font-size: var(--font-largelarge);
     margin-top: 20px;
@@ -102,7 +118,50 @@ position: relative;
 #readyMessage {
     font-size: var(--font-large);
     color: var(--blue);
-    margin-top: 20px;
     margin-bottom: 40px;
+}
+
+span {
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+
+/* PHONE VALIDATION */
+
+#inputTel:invalid:not(:focus):not(:placeholder-shown) {
+    background: pink;
+}
+
+#inputTel:invalid:focus:not(:placeholder-shown) ~ #requirementsPatientTel {
+    max-width: fit-content;
+    height: fit-content;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+}
+
+#requirementsPatientTel {
+    max-width: 0;
+    height: 0;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    font-size: var(--small);
+    color: var(--red);
+    line-height: 1.25rem;
+    font-style: italic;
+
+    transition: 0.52s;
+
+    /* outline: 1px black solid;     */
+}
+
+#errorMessage {
+
+    margin-top: 20px;
+    color: var(--red);
+    /* outline: 1px black solid;     */
 }
 

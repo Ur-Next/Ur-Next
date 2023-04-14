@@ -42,22 +42,23 @@ function InfoForPatient() {
                             <br />
                             to see when you are going to be admitted
                         </p>
-                        <input id="inputTel" type="tel" placeholder="xxxxxxxxxx" onChange={handleFormChange} value={userTel}></input>
-                        <p>{errorMessage}</p>
+                        <input id="inputTel" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="xxxxxxxxxx" onChange={handleFormChange} value={userTel} required></input>
+                        <p id="requirementsPatientTel">Your telephone must be 10 characters, no other symbols.</p>
                         <button type="submit" onClick={handleSubmitTel}>
                             Submit
                         </button>
+                        <p id="errorMessage">{errorMessage}</p>
                     </form>
                 ) : parseInt(responseData.peopleAhead) > 1 ? (
-                    <>
-                        <p className="messageText">Your estimate appointment time</p>
+                    <div className="coreDataBlock">
+                        <p className="messageText">Your appointment time</p>
                         <div id="timeAppointment">{responseData.appointmentTime}</div>
                         <p className="messageText">Patients in the line ahead of you</p>
                         <div id="count">{responseData.peopleAhead}</div>
-                        <p className="messageText">Estimated time remaining {responseData.peopleAhead * 15} mins</p>
-                    </>
+                        <p className="messageText">Estimated time remaining <span>{responseData.peopleAhead * 15} mins</span></p>
+                    </div>
                 ) : (
-                    <>
+                    <div className="coreDataBlock">
                         <p className="messageText">Your estimate appointment time</p>
                         <div id="timeAppointment">{responseData.appointmentTime}</div>
                         <p id="readyMessage">You are Next!</p>
@@ -66,7 +67,7 @@ function InfoForPatient() {
                             <br />
                             Please get prepared
                         </p>
-                    </>
+                    </div>
                 )}
             </div>
         </>
