@@ -88,7 +88,10 @@ p {
 
     /* outline: 3px solid rgb(162, 96, 173); */
 }
-/* __________________________________________________ */
+
+
+              /* FORM */
+
 #form {
     width: 100%;
     grid-gap: 10px;
@@ -110,14 +113,14 @@ p {
 
     /* outline: black 1px solid;     */
 }
-
-           
+    
 
 #form > input[type="date"],
 #form > input[type="time"] {
         all: unset;
         max-width: 80%;
-        /* outline: black 1px solid;     */
+
+    /* outline: black 1/px solid;     */
     }
 
 #form > input:focus {
@@ -125,16 +128,21 @@ p {
     background-color: var(--almostwhite);
 }
 
-            /* input:autofill {
-                background-color: rgb(232, 240, 254) !important;
-                border: 3px solid blue;
-            } */
-
 ::placeholder {
     color: var(--lightgrey);
     font-size: var(--small);
     padding-left: 5px;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px var(--almostwhite) inset !important;
+}
+
+
+                /* VALIDATION */
 
 #form > input:valid {
     /* background: green; */
@@ -143,104 +151,73 @@ p {
     background-position: 20px 20px;
 }
 
-#form >input[type="email"]:invalid:not(:focus):not(:placeholder-shown) {
-                background: pink;
-            }
+#form >input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
 #form >input[type="tel"]:invalid:not(:focus):not(:placeholder-shown) {
-                background: pink;
-            }
+    background: pink;
+}
 
-#form >:invalid:focus:not(:placeholder-shown) ~ .requirements {
+
+                 /* TEL VALIDATION */
+
+#form > input[type="tel"]:invalid:focus:not(:placeholder-shown) ~ #requirementsTel {
                    
-                  max-height: 200px;
-                  padding: 0 30px 20px 50px;
-                
-              }
+    max-width: fit-content;
+    padding: 10px;
+}
             
 
-.requirements {
-    padding: 0 30px 0 50px;
-    color: #999;
-    max-height: 0;
-    transition: 0.28s;
+#requirementsTel {
+
+    max-width: 0;
     overflow: hidden;
-    color: red;
-    font-style: italic;
-}
-/* _______________________________________________________ */
 
+    text-align: center;
 
-/* #form {
-    width: 100%;
-    grid-gap: 10px;
-
-    display: grid;
-    grid-template-columns: 40px repeat(10, 1fr);
-
-    /* outline: 3px solid rgb(65, 193, 75); */
-/* } */
-
-/* input {
-    all: unset;
-
-    min-width: 100%;
-    color: var(--graphite);
-    font-family: "Barlow", sans-serif; */
-    /* background-color: var(--almostwhite); */
-
-    /* outline: black 1px solid;     */
-/* } */
-
-/* input:focus {
-    outline: none;
-    background-color: var(--almostwhite);
-} */
-
-/* input[type="date"],
-input[type="time"] {
-    all: unset;
-    max-width: 80%;
-    outline: black 1px solid;    
-} */
-
-/* input:autofill {
-    background-color: rgb(232, 240, 254) !important;
-    border: 3px solid blue;
-  } */
-
-/* ::placeholder {
-    color: var(--lightgrey);
     font-size: var(--small);
-    padding-left: 5px;
-} */
-
-/* input:valid {
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: 20px 20px;
-} */
-
-/* input:valid:not(:placeholder-shown) {
-    & ~ .requirements {
-        max-height: 200px;
-        padding: 0 30px 20px 50px;
-    }
-} */
-
-/* .requirements {
-    padding: 0 30px 0 50px;
-    color: #999;
-    max-height: 0;
-    transition: 0.28s;
-    overflow: hidden;
-    color: red;
+    color: var(--red);
+    line-height: 1.25rem;
+    /* font-weight: bold; */
+    background-color: var(--almostwhite);
     font-style: italic;
-} */
+
+    border-radius: 7px;
+
+    transition: 0.28s;   
+}
+
+                /* EMAIL VALIDATION */
+
+#form > input[type="email"]:invalid:focus:not(:placeholder-shown) ~ #requirementsEmail {
+                   
+    max-width: fit-content;
+    padding: 10px;
+}
+
+
+#requirementsEmail {
+
+    max-width: 0;
+    overflow: hidden;
+
+    text-align: center;
+
+    font-size: var(--small);
+    color: var(--red);
+    line-height: 1.25rem;
+    /* font-weight: bold; */
+    background-color: var(--almostwhite);
+    font-style: italic;
+
+    border-radius: 7px;
+
+    transition: 0.28s;   
+}
 
 
 
 
+
+                /* SORTING BUTTONS */
 
 #sortingContainer {
     display: grid;
@@ -288,6 +265,10 @@ input[type="time"] {
     transition: font-size 300ms ease-in-out;
 }
 
+
+
+                    /* PATIENTS QUEUE */
+
 #dataContainer {
     max-height: 100vh;
     overflow: auto;
@@ -321,8 +302,6 @@ input[type="time"] {
     border-bottom: 1px solid white;
     box-shadow: -3px 0px 6px 2px rgba(0, 0, 0, 0.05);
     margin-bottom: 3px;
-
-    
 
     /* outline: 3px solid rgb(56, 18, 211); */
 }
@@ -361,6 +340,9 @@ input[type="time"] {
     /* outline: black 1px solid; */
 }
 
+
+                /* BUTTONS */
+                
 button {
     background: none;
     border: none;
@@ -398,17 +380,3 @@ button:hover {
     opacity: 0.5;
     transition: opacity 200ms ease-in-out;
 }
-
-
-
-
-
-  
-
-
-/* -----VALIDATION----- */
-
-/* input :valid
-{
-
-} */
