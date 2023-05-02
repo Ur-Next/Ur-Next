@@ -7,7 +7,7 @@ const client = require("twilio")(accountSid, authToken);
 function sendNotificationSMS(phoneNumber) {
     return client.messages.create({
         body: `*** Notification Testing Message ***`,
-        from: "+14752628564",
+        from: "+16206048506",
         to: `+1${phoneNumber}`
     });
 }
@@ -21,7 +21,7 @@ function sendRegistrationSMS(phoneNumber, appointmentDate, appointmentTime) {
         body: `
        Regitration Message Testing YAYYY!!
         `,
-        from: "+14752628564",
+        from: "+16206048506",
         to: `+1${phoneNumber}`
     });
 }
